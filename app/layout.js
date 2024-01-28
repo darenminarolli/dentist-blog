@@ -1,6 +1,7 @@
 import { Ubuntu_Mono} from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 
 const inter = Ubuntu_Mono({ subsets: ["latin"], weight:'400', });
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Nav/>
         {children}
+        <Footer/>
         </body>
     </html>
   );

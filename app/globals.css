@@ -73,7 +73,7 @@ body {
    @apply h-9 w-9 font-bold p-0 m-0;
  }
  
-
+/* 
  .swiper {
   width: 700px;
   height: auto;
@@ -87,4 +87,20 @@ body {
 .swiper-slide img {
   display: block;
   width: 100%;
+} */
+
+
+.swiper {
+  @apply w-56 h-96
+}
+
+.swiper-slide {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ border-radius: 18px;
+ font-size: 22px;
+ font-weight: bold;
+ color: #fff;
+ background-color: #171717;
 }
