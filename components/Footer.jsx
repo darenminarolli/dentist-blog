@@ -10,7 +10,7 @@ const Footer = () => {
                         <h1 className='text-4xl font-extrabold'>Filan Fisteku</h1>
                         <p className=''>darenminarolli@gmail.com</p>
                     </div>
-                    <h3 className='underline'>Proffesional Denstist</h3>
+                    <h3 className='underline'>Professional Dentist</h3>
                 </div>
                 <div className='flex flex-col gap-4 items-center pt-3'>
                     <h1 className=''>Media</h1>
