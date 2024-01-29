@@ -42,6 +42,7 @@ html{
 
 body {
  @apply bg-slate-300;
+ overflow-x: hidden;
 }
 
 @layer utilities {
@@ -73,34 +74,10 @@ body {
    @apply h-9 w-9 font-bold p-0 m-0;
  }
  
-/* 
- .swiper {
-  width: 700px;
-  height: auto;
-}
-
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-} */
 
 
-.swiper {
-  @apply w-56 h-96
-}
 
-.swiper-slide {
- display: flex;
- align-items: center;
- justify-content: center;
- border-radius: 18px;
- font-size: 22px;
- font-weight: bold;
- color: #fff;
- background-color: #171717;
+svg path{
+  stroke: #ABB2BF !important;
+  color: #ABB2BF !important;
 }

@@ -1,6 +1,6 @@
 'use client'
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import { cardData } from '@/store/data';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-fade';
@@ -8,13 +8,13 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 
-// import required modules
+
 import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 
 
 const BigScreenSwiper = () => {
   return (
-    <div className='hidden'>
+<div className='hidden md:block'>
 
     <Swiper
     spaceBetween={30}
@@ -24,22 +24,20 @@ const BigScreenSwiper = () => {
       clickable: true,
     }}
     modules={[EffectFade, Navigation, Pagination]}
-    className="mySwiper m-4 rounded-md hidden"
+    className="  m-4 rounded-md w-[1050px] h-[450px] shadow-md "
   >
-    <SwiperSlide>
-      <img className='h-96 w-full ' src="https://swiperjs.com/demos/images/nature-1.jpg" />
-    </SwiperSlide>
-    <SwiperSlide>
-      <img className='h-96 w-full ' src="https://swiperjs.com/demos/images/nature-2.jpg" />
-    </SwiperSlide>
-    <SwiperSlide>
-      <img className='h-96 w-full ' src="https://swiperjs.com/demos/images/nature-3.jpg" />
-    </SwiperSlide>
-    <SwiperSlide>
-      <img className='h-96 w-full ' src="https://swiperjs.com/demos/images/nature-4.jpg" />
-    </SwiperSlide>
+         {cardData.map((card, index) => (
+                    <SwiperSlide key={index} >
+                        <img
+                            src={card.image}
+                            alt={`Card ${index + 1}`}
+                            className="object-cover h-full w-full"
+                        />
+                    </SwiperSlide>
+                ))}
   </Swiper>
-    </div>
+</div>
+
   )
 }
 
