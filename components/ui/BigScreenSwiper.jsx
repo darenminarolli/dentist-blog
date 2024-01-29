@@ -14,8 +14,7 @@ import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 
 const BigScreenSwiper = () => {
   return (
-<div className='hidden md:block'>
-
+<div className=' '>
     <Swiper
     spaceBetween={30}
     effect={'fade'}

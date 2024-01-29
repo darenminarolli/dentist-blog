@@ -11,24 +11,22 @@ import { EffectCards } from 'swiper/modules';
 import { cardData } from '@/store/data';
 const SmallScreenSwiper = () => {
     return (
-        <div className='block md:hidden'>
-            <Swiper
-                effect={'cards'}
-                grabCursor={true}
-                modules={[EffectCards]}
-                className="mySwiper"
-            >
-                {cardData.map((card, index) => (
-                    <SwiperSlide key={index}>
-                        <img
-                            src={card.image}
-                            alt={`Card ${index + 1}`}
-                            className="object-cover h-full w-full"
-                        />
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-        </div>
+        <Swiper
+            effect={'cards'}
+            grabCursor={true}
+            modules={[EffectCards]}
+            className=" h-[350px] w-[200px] self-center"
+        >
+            {cardData.map((card, index) => (
+                <SwiperSlide key={index} className=' rounded-md'>
+                    <img
+                        src={card.image}
+                        alt={`Card ${index + 1}`}
+                        className="object-cover h-full w-full"
+                    />
+                </SwiperSlide>
+            ))}
+        </Swiper>
     )
 }
 
