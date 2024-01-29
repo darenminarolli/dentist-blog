@@ -15,7 +15,7 @@ const SmallScreenSwiper = () => {
             effect={'cards'}
             grabCursor={true}
             modules={[EffectCards]}
-            className=" h-[350px] w-[200px] self-center"
+            className=" h-[350px] w-[220px] self-center"
         >
             {cardData.map((card, index) => (
                 <SwiperSlide key={index} className=' rounded-md'>
