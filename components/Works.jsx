@@ -5,27 +5,11 @@ import SmallScreenSwiper from "./ui/SmallScreenSwiper"
 
 
 const Works = () => {
-  const [screenWidth, setScreenWidth] = useState(
-    typeof window !== 'undefined' ? window.innerWidth : 0
-  );
+  const [screenWidth, setScreenWidth] = useState();
 
   useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    // Check if window is defined before adding event listener
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', handleResize);
-    }
-
-    return () => {
-      // Check if window is defined before removing event listener
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', handleResize);
-      }
-    };
-  }, []); 
+    setScreenWidth(window.innerWidth)
+  }, []);
 
   return (
     <section id="punet" className="flex flex-col ">
@@ -35,15 +19,8 @@ const Works = () => {
 
           <BigScreenSwiper /> :
 
-          //  <div className='m-0 p-0'>
-
           <SmallScreenSwiper />
-        //  </div>
       }
-      <>
-
-      </>
-
     </section>
   )
 }

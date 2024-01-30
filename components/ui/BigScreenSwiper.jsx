@@ -14,7 +14,7 @@ import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 
 const BigScreenSwiper = () => {
   return (
-<div className=' '>
+<div>
     <Swiper
     spaceBetween={30}
     effect={'fade'}
@@ -23,7 +23,7 @@ const BigScreenSwiper = () => {
       clickable: true,
     }}
     modules={[EffectFade, Navigation, Pagination]}
-    className="  m-4 rounded-md w-[1050px] h-[450px] shadow-md "
+    className=" m-4 rounded-md w-[1050px] h-[450px] shadow-md "
   >
          {cardData.map((card, index) => (
                     <SwiperSlide key={index} >
