@@ -15,7 +15,7 @@ export async function POST(req,){
 
 export async function GET(){
     try{
-        // const { fullName } = params;
+    
         const dentists = await Dentists.findOne({fullName:'Aleks Visha'});
         if (!dentists) {
             return NextResponse.json({message:'User not found'}, {status:404})

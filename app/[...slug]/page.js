@@ -9,7 +9,7 @@ import Services from "../(components)/ui/Services";
 import Works from "../(components)/Works";
 
 export const fetchData = async() =>{
-  const res = await fetch('http://localhost:3000/api/Dentists',{
+  const res = await fetch('https://dentist-blog.vercel.app/api/Dentists',{
     cache: 'no-store'
   })
   return res.json()
