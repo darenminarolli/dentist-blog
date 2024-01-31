@@ -42,11 +42,11 @@ const page = () => {
             throw new Error("Failed to create user")
         }
         router.refresh()
-        router.push('/')
+        router.back()
         console.log(formData)
     }
     return (
-        <form className="max-w-lg mx-auto h-max mt-44" method='post' onSubmit={handleSubmit}>
+        <form className="max-w-lg mx-auto h-max " method='post' onSubmit={handleSubmit}>
             <div className="mb-4">
                 <label className=" text-gray-700 font-bold mb-2" for="full-name">
                     Full Name
@@ -83,6 +83,7 @@ const page = () => {
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="number"
                     type="tel"
+                    // pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
                     name='number'
                     onChange={handleChange}
                     value={formData.number}
@@ -154,9 +155,9 @@ const page = () => {
                     type="file"
                     accept="image/*"
                     multiple
-                    name='files'
+                    name='file'
                     onChange={handleChange}
-                    value={formData.files}
+                    value={formData.file}
                 />
             </div>
             <div className="mb-4">
@@ -164,7 +165,7 @@ const page = () => {
                     Services
                 </label>
                 <div className="grid grid-cols-3 gap-4">
-                    <input
+                    <textarea
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         id="service1"
                         type="text"
@@ -173,7 +174,7 @@ const page = () => {
                         value={formData.service1}
                         placeholder="Service 1"
                     />
-                    <input
+                    <textarea
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         id="service2"
                         type="text"
@@ -182,7 +183,7 @@ const page = () => {
                         value={formData.service2}
                         placeholder="Service 2"
                     />
-                    <input
+                    <textarea
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         id="service3"
                         type="text"
@@ -191,7 +192,7 @@ const page = () => {
                         value={formData.service3}
                         placeholder="Service 3"
                     />
-                    <input
+                    <textarea
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         id="service4"
                         type="text"
@@ -200,7 +201,7 @@ const page = () => {
                         value={formData.service4}
                         placeholder="Service 4"
                     />
-                    <input
+                    <textarea
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         id="service5"
                         type="text"
@@ -209,7 +210,7 @@ const page = () => {
                         value={formData.service5}
                         placeholder="Service 5"
                     />
-                    <input
+                    <textarea
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         id="service6"
                         type="text"

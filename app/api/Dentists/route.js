@@ -13,12 +13,12 @@ export async function POST(req,){
     }
 }
 
-// export async function GET(){
-//     try{
-//         const dentists = await  Dentists.find();
-//         return NextResponse.json({dentists}, {status:200})
+export async function GET(){
+    try{
+        const dentists = await  Dentists.find();
+        return NextResponse.json({dentists}, {status:200})
 
-//     }catch(error){
-//         return NextResponse.json({message: "Error daren ",  error}, {status: 500})
-//     }
-// }
+    }catch(error){
+        return NextResponse.json({message: "Error daren ",  error}, {status: 500})
+    }
+}
