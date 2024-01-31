@@ -31,3 +31,10 @@
 //      console.log('Failed to filter user', e)
 //     }
 // }
+
+// export async function fetchUsers(){
+//     const res= await fetch('http://localhost:3000/api/Dentists')
+//     const data= await res.json()
+//     console.log(data, 'success')
+//     return res.json()
+// }

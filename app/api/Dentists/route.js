@@ -15,10 +15,14 @@ export async function POST(req,){
 
 export async function GET(){
     try{
-        const dentists = await  Dentists.find();
+        // const { fullName } = params;
+        const dentists = await Dentists.findOne({fullName:'Aleks Visha'});
+        if (!dentists) {
+            return NextResponse.json({message:'User not found'}, {status:404})
+        }
         return NextResponse.json({dentists}, {status:200})
-
-    }catch(error){
-        return NextResponse.json({message: "Error daren ",  error}, {status: 500})
+    } catch(error){
+        return res.status(500).json({ message: "Error retrieving dentist", error });
     }
 }
+
