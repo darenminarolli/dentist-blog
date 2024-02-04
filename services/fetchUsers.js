@@ -1,6 +1,9 @@
 // export async function fetchUsers() {
 //     try {
 //       const res = await fetch('http://localhost:3000/api/Dentists');
+
+import { userAgent } from "next/server";
+
   
 //       if (!res.ok) {
 //         // If the initial fetch is not successful, try fetching from the production URL
@@ -38,3 +41,9 @@
 //     console.log(data, 'success')
 //     return res.json()
 // }
+
+export async function urlParameter(params){
+    // const user= await params.slug.join(', ').replace('-',' ')
+    // console.log('params are here ', user)
+    return params;
+}

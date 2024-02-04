@@ -1,14 +1,13 @@
 import React from 'react'
 import Button from './Button'
 
-const About = () => {
+const About = (params) => {
   return (
     <article id='rreth-meje' className='w-full flex flex-col md:flex-row flex-wrap justify-between gap-5 md:gap-20'>
       <img className=' w-full md:w-[400px] h-[400px] md:h-auto  rounded-md shadow-2xl' src="https://burst.shopifycdn.com/photos/male-dentist.jpg?width=1000&format=pjpg&exif=0&iptc=0" alt="profile-photo" />
       <div className='w-full md:w-[500px] flex flex-col flex-wrap'>
         <h1 className='self-center mb-4 header-text'>Rreth meje</h1>
-        <p className='text-slate-800'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut corrupti laudantium vel, suscipit pariatur asperiores laboriosam, consequuntur necessitatibus iusto maiores quae sapiente et aspernatur placeat, voluptatem molestiae voluptatibus in similique?
-          Quisquam ab pariatur porro ratione vitae, esse illo rerum odit ut aliquam repellat velit animi iste natus aspernatur sint obcaecati fugiat amet voluptate corrupti itaque! Quisquam repellat ut reiciendis quia!</p>
+        <p className='text-slate-800'>{params.desc}</p>
 
         <Button text='Flasim?!' style='self-center py-2 px-4 my-4' />
       </div>
