@@ -32,24 +32,27 @@ const page = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const res =await fetch("/api/Dentists",{
+        try {
+             const res =await fetch("/api/Dentists",{
             method: "POST",
             body: JSON.stringify(formData),
             headers: {
                 "Content-Type": "application/json"
             }
         })
-        if(!res.ok){
-            throw new Error("Failed to create user")
+            
+        //   router.refresh()
+        // router.back()
+        } catch (error) {
+            console.log(error)
         }
-        router.refresh()
-        router.back()
+      
         console.log(formData)
     }
     return (
         <form className="max-w-lg mx-auto h-max " method='post' onSubmit={handleSubmit}>
             <div className="mb-4">
-                <label className=" text-gray-700 font-bold mb-2" for="full-name">
+                <label className=" text-gray-700 font-bold mb-2" htmlFor="full-name">
                     Full Name
                 </label>
                 <input
@@ -63,7 +66,7 @@ const page = () => {
                 />
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700 font-bold mb-2" for="email">
+                <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
                     Email
                 </label>
                 <input
@@ -77,7 +80,7 @@ const page = () => {
                 />
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700 font-bold mb-2" for="number">
+                <label className="block text-gray-700 font-bold mb-2" For="number">
                     Number
                 </label>
                 <input
@@ -92,7 +95,7 @@ const page = () => {
                 />
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700 font-bold mb-2" for="ig-url">
+                <label className="block text-gray-700 font-bold mb-2" htmlFor="ig-url">
                     Instagram URL
                 </label>
                 <input
@@ -106,7 +109,7 @@ const page = () => {
                 />
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700 font-bold mb-2" for="linkedin-url">
+                <label className="block text-gray-700 font-bold mb-2" htmlFor="linkedin-url">
                     LinkedIn URL
                 </label>
                 <input
@@ -120,7 +123,7 @@ const page = () => {
                 />
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700 font-bold mb-2" for="facebook-url">
+                <label className="block text-gray-700 font-bold mb-2" htmlFor="facebook-url">
                     Facebook URL
                 </label>
                 <input
@@ -134,7 +137,7 @@ const page = () => {
                 />
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700 font-bold mb-2" for="description">
+                <label className="block text-gray-700 font-bold mb-2" htmlFor="description">
                     Rreth meje descripiton
                 </label>
                 <textarea
@@ -147,7 +150,7 @@ const page = () => {
                 ></textarea>
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700 font-bold mb-2" for="images">
+                <label className="block text-gray-700 font-bold mb-2" htmlFor="images">
                     Images
                 </label>
                 <input
@@ -162,7 +165,7 @@ const page = () => {
                 />
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700 font-bold mb-2" for="services">
+                <label className="block text-gray-700 font-bold mb-2" htmlFor="services">
                     Services
                 </label>
                 <div className="grid grid-cols-3 gap-4">
