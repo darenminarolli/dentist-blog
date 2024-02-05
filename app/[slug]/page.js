@@ -12,7 +12,7 @@ export const fetchData = async(params) =>{
   const local= 'http://localhost:3000'
 
   const user= params.slug
-  const res = await fetch(`${local || 'https://dentist-blog.vercel.app' }/api/Dentists/${user}`,{
+  const res = await fetch(`https://dentist-blog.vercel.app/api/Dentists/${user}`,{
     cache: 'no-store'
   })
   return res.json()
