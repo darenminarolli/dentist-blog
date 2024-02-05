@@ -1,12 +1,13 @@
 import Dentists from "@/models/Users";
 import { NextResponse } from "next/server";
-import { useParams } from "next/navigation";
+import { connectToDB } from "@/utils/database";
 
-export async function POST(req,){
+export async function POST(req,res){
     try {
-        const body = await req.json()
-        const userData = body.formData
-        await Dentists.create(userData)
+        await connectToDB()
+        const body = await req.json();
+        const userData = body.formData;
+        await Dentists.create(userData);
 
         return NextResponse.json({message: 'ticket created'}, {status:201})
     } catch (error) {
@@ -14,24 +15,16 @@ export async function POST(req,){
     }
 }
 
-// export async function GET(paramsName){
-//     try {
-//         const dentists = await Dentists.findOne({fullName: paramsName});
-//         if (!dentists) {
-//             return {message:'User not found', status:404};
-//         }
-//         return {dentists, status:200};
-//     } catch(error) {
-//         return { message: "Error retrieving dentist", error };
-//     }
-// }
+
 
 export async function GET(params){
-   
+    
     try {
+        await connectToDB()
         const user= params.url.slice(45)  
         const dentists = await Dentists.findOne({fullName: user});
         // console.log('dentists',dentists, 'alo')
+
         if (!dentists) {
             return  NextResponse.json({message:'User not found'}, {status: 404});
         }

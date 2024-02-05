@@ -12,7 +12,7 @@ export const fetchData = async(params) =>{
   const local= 'http://localhost:3000'
 
   const user= params.slug
-  const res = await fetch(`${local || 'https://dentist-blog.vercel.app'}/api/Dentists/${user}`,{
+  const res = await fetch(`${local || 'https://dentist-blog.vercel.app' }/api/Dentists/${user}`,{
     cache: 'no-store'
   })
   return res.json()
@@ -24,15 +24,6 @@ export default  async function Home({params}) {
   const {dentists}= await fetchData(params);
 console.log(dentists?.fullName)
 
-// if (document.documentElement.requestFullscreen) {
-//   document.documentElement.requestFullscreen();
-// } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
-//   document.documentElement.mozRequestFullScreen();
-// } else if (document.documentElement.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-//   document.documentElement.webkitRequestFullscreen();
-// } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
-//   document.documentElement.msRequestFullscreen();
-// }
  
   return (
     <>

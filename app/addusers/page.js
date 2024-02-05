@@ -12,7 +12,6 @@ const page = () => {
         linkedinUrl: '',
         fcbUrl: '',
         desc: '',
-        file: null,
         service1: '',
         service2: '',
         service3: '',
@@ -35,8 +34,10 @@ const page = () => {
         e.preventDefault();
         const res =await fetch("/api/Dentists",{
             method: "POST",
-            body: JSON.stringify({formData}),
-            "content-type": "application/json"
+            body: JSON.stringify(formData),
+            headers: {
+                "Content-Type": "application/json"
+            }
         })
         if(!res.ok){
             throw new Error("Failed to create user")
