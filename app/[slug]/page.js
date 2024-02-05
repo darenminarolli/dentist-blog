@@ -20,13 +20,10 @@ export const fetchData = async(params) =>{
 
 export default  async function Home({params}) {
 
-try {
+
   const {dentists}= await fetchData(params);
   
   console.log(dentists?.fullName)
-} catch (error) {
-  console.log(error)
-}
 
  
   return (
