@@ -12,7 +12,7 @@ export const fetchData = async(params) =>{
   const local= 'http://localhost:3000'
 
   const user= params.slug
-  const res = await fetch(`https://dentist-blog.vercel.app/api/Dentists`,{
+  const res = await fetch(`https://dentist-blog.vercel.app/api/Dentists/${user}`,{
     cache: 'no-store'
   })
   return res.json()
@@ -20,9 +20,13 @@ export const fetchData = async(params) =>{
 
 export default  async function Home({params}) {
 
-
+try {
   const {dentists}= await fetchData(params);
-console.log(dentists?.fullName)
+  
+  console.log(dentists?.fullName)
+} catch (error) {
+  console.log(error)
+}
 
  
   return (

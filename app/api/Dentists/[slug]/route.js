@@ -17,12 +17,12 @@ export async function POST(req,res){
 
 
 
-export async function GET(){
+export async function GET(params){
     
     try {
         await connectToDB()
-        // const user= params.url.slice(45)  
-        const dentists = await Dentists.findOne({fullName: 'John-Doe'});
+        const user= params.url.slice(45)  
+        const dentists = await Dentists.findOne({fullName: user});
         // console.log('dentists',dentists, 'alo')
 
         if (!dentists) {
