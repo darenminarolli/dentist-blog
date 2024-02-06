@@ -18,6 +18,7 @@ export const fetchData = async(params) =>{
   return res.json()
 }
 
+
 export default  async function Home({params}) {
 
 
