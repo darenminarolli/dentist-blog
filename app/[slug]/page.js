@@ -10,6 +10,8 @@ import Works from "../(components)/Works";
 
 export const fetchData = async(params) =>{
   const url= 'https://dentist-blog.vercel.app'
+  const local = 'http://localhost:3000'
+  // http://localhost:3000
 
   const user= params.slug
   const res = await fetch(`${url}/api/Dentists?user=${user}`,{
@@ -35,7 +37,7 @@ export default  async function Home({params}) {
      <Services services={dentists?.services}/>
      <Works/>
     </main>
-    {/* <Footer data={dentists}/> */}
+    <Footer data={dentists}/>
     </>
   );
 }
