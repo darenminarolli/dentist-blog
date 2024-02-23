@@ -1,12 +1,9 @@
 import mongoose, { Schema, connect, mongo } from "mongoose";
 
-// mongoose.connect(process.env.MONGO_URI)
-// mongoose.Promise= global.Promise;
+mongoose.connect(process.env.MONGO_URI)
+mongoose.Promise= global.Promise;
 
 const userSchema = new Schema({
-  _id: {
-    $oid: String
-  },
   fullName: String,
   email: String,
   number: Number,
@@ -20,6 +17,9 @@ const userSchema = new Schema({
   service4: String,
   service5: String,
   service6: String
+},
+{
+  timestamps:true
 }
 )
 const Dentists = mongoose.models.Dentists || mongoose.model("Dentists", userSchema)

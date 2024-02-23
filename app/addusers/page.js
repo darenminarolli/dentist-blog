@@ -12,7 +12,6 @@ const page = () => {
         linkedinUrl: '',
         fcbUrl: '',
         desc: '',
-        file: null,
         service1: '',
         service2: '',
         service3: '',

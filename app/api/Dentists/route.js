@@ -21,9 +21,10 @@ export async function GET(params){
     
     try {
         await connectToDB()
-        const user= params.url.slice(45)  
+        const user= params.url.slice(40)  
+        console.log(user, 'here')
         const dentists = await Dentists.findOne({fullName: user});
-        // console.log('dentists',dentists, 'alo')
+        console.log('dentists',dentists, 'alo')
 
         if (!dentists) {
             return  NextResponse.json({message:'User not found'}, {status: 404});

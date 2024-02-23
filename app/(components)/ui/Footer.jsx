@@ -7,7 +7,7 @@ const Footer = ({data}) => {
             <div className='flex flex-col md:flex-row justify-around pt-8'>
                 <div className='flex flex-col gap-4  items-center md:items-start'>
                     <div className='flex items-center  gap-6'>
-                        <h1 className='text-4xl font-extrabold'>{data.fullName}</h1>
+                        <h1 className='text-4xl font-extrabold'>{data?.fullName}</h1>
                         <p className=''>{data.email}</p>
                     </div>
                     <h3 className='underline'>Professional Dentist</h3>
