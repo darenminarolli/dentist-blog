@@ -21,7 +21,7 @@ export async function GET(params){
     
     try {
         await connectToDB()
-        const user= params.url.slice(40)  
+        const user= params.url.slice(50)  
         console.log(user, 'here')
         const dentists = await Dentists.findOne({fullName: user});
         console.log('dentists',dentists, 'alo')
